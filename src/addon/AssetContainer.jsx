@@ -111,7 +111,11 @@ export default class AssetContainer extends Component {
     }
 
     return (
-      <AssetPanel component={component} brandaiUrl={this.brandaiUrl}/>
+      <AssetPanel
+        organizationName={this.props.organizationName}
+        libraryName={this.props.libraryName}
+        component={component}
+        brandaiUrl={this.brandaiUrl}/>
     )
   };
 };
