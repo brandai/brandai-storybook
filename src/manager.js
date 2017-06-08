@@ -4,9 +4,9 @@ import AssetContainer from './addon/AssetContainer';
 import {ADDON_ID, PANEL_ID} from './constants';
 
 export default function register(options) {
-  var { host, organizationName, libraryName, libraryKey } = options;
+  var { dataUrl } = options;
 
-  if (!organizationName || !libraryName) {
+  if (!dataUrl) {
     console.log('The Brand.ai library viewer is not configured');
     return;
   }
@@ -18,10 +18,7 @@ export default function register(options) {
       render: () => <AssetContainer
         channel={channel}
         api={api}
-        host={host}
-        organizationName={organizationName}
-        libraryName={libraryName}
-        libraryKey={libraryKey}
+        dataUrl={dataUrl}
       />,
     });
   });

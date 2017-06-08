@@ -15,23 +15,15 @@ export default class AssetContainer extends Component {
   constructor(props) {
     super(props);
     this.state = { kind: null, storyName: null, componentLookup: {} };
-    this.brandaiUrl = `https://brand.ai/${props.organizationName}/${props.libraryName}`;
-    if (props.libraryKey) {
-      this.brandaiUrl += `?key=${props.libraryKey}`
+    if (props.dataUrl) {
+      this.brandaiUrl = props.dataUrl.replace(/assets\./, '').replace(':3002', ':3000').replace(/\/style-data.*/i, '');
     }
   }
 
   static propTypes = {
     channel: PropTypes.object,
     api: PropTypes.object,
-    host: PropTypes.string,
-    organizationName: PropTypes.string,
-    libraryName: PropTypes.string,
-    libraryKey: PropTypes.string
-  };
-
-  defaultProps = {
-    host: 'https://assets.brand.ai'
+    dataUrl: PropTypes.string
   };
 
   componentDidMount() {
@@ -51,8 +43,11 @@ export default class AssetContainer extends Component {
   getLibrary() {
     fetchLibrary(this.props, (error, library) => {
       if (!error) {
-        console.log('library', library);
-        this.setState({ componentLookup: this.createComponentLookup(library) });
+        this.setState({
+          componentLookup: this.createComponentLookup(library),
+          organizationName: library.organization,
+          libraryName: library.name
+        });
       }
     });
   }
@@ -101,19 +96,15 @@ export default class AssetContainer extends Component {
   }
 
   render() {
-    if (!this.state.kind) {
+    if (!this.state.kind || !this.state.organizationName) {
       return null;
     }
     var component = this.getComponent();
 
-    if (!component) {
-      return null;
-    }
-
     return (
       <AssetPanel
-        organizationName={this.props.organizationName}
-        libraryName={this.props.libraryName}
+        organizationName={this.state.organizationName}
+        libraryName={this.state.libraryName}
         component={component}
         brandaiUrl={this.brandaiUrl}/>
     )

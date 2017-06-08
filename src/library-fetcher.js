@@ -1,9 +1,4 @@
 export default (options, callback) => {
-  var url = options.host + '/'+ options.organizationName + '/' + options.libraryName + '/style-data.json?exportFormat=list';
-  if (options.libraryKey) {
-    url += '&key=' + options.libraryKey;
-  }
-
   var xhr = new XMLHttpRequest();
   xhr.onload = function() {
     if (xhr.status === 200) {
@@ -22,7 +17,7 @@ export default (options, callback) => {
     return callback('could not send request to the server');
   };
 
-  xhr.open('GET', url, true);
+  xhr.open('GET', options.dataUrl, true);
 
   xhr.setRequestHeader("Content-Type", 'application/json');
   xhr.send();
