@@ -1,4 +1,4 @@
-##Connect Brand.ai UI Components to your React Storybook
+## Connect Brand.ai UI Components to your React Storybook
 
 This tutorial assumes that you are logged in to Brand.ai and that your storybook has been [connected to Brand.ai](./brandai-connect.md). In addition, you will need edit permissions to the design library to connect components.
 

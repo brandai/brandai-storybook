@@ -22,3 +22,4 @@ register({ dataUrl:'<brandai-data-export-url>' });
 ```
 [Obtaining the Brand.ai data export url](./docs/brandai-connect.md) 
 
+[Add Storybook stories to Brand.ai](./docs/component-connect.md)
