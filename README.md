@@ -17,9 +17,8 @@ Create a file called `addons.js` in your storybook config (default: `.storybook`
 import '@kadira/storybook/addons'
 
 import register from '@brandai/storybook-addon';
-register({ organizationName: 'test-org', libraryName: 'primary-brand', libraryKey: '' });
+register({ dataUrl:'<brandai-data-export-url>' });
 
 ```
-In the above example, the organizationName and libraryName were found by inspecting the url of a design library:
-https://brand.ai/test-org/primary-brand
+[Obtaining the Brand.ai data export url](./docs/brandai-connect.md) 
 
