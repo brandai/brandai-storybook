@@ -4,7 +4,7 @@
   "description": "Brand.ai React Storybook addon",
   "repository": {
     "type": "git",
-    "url": "https://github.com/you/repo.git"
+    "url": "https://github.com/brandai/brandai-storybook.git"
   },
   "license": "MIT",
   "scripts": {
