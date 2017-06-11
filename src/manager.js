@@ -3,7 +3,7 @@ import addons from '@kadira/storybook-addons';
 import AssetContainer from './addon/AssetContainer';
 import {ADDON_ID, PANEL_ID} from './constants';
 
-export default function register(options) {
+export default (options) => {
   var { dataUrl } = options;
 
   if (!dataUrl) {
@@ -22,5 +22,5 @@ export default function register(options) {
       />,
     });
   });
-};
+}
 
