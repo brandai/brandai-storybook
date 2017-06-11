@@ -1,5 +1,5 @@
 {
-  "name": "@brandai/storybook-addon",
+  "name": "brandai-storybook",
   "version": "0.0.0",
   "description": "Brand.ai React Storybook addon",
   "repository": {
