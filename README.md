@@ -22,7 +22,7 @@ import register from 'brandai-storybook';
 register({ dataUrl:'<brandai-data-export-url>' });
 
 ```
-### Conencting to Brand.ai
+### Connecting to Brand.ai
 In order to obtain the url required to connect to brand.ai, you first need to navigate to [Brand.ai](https://brand.ai) and log in. Once you're logged in, select the design library that you want to connect to React Storybook and click the Tools and Integrations in the header.
 
 ![Tools and Integrations](./docs/tools-integrations.png)
