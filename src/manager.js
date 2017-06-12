@@ -1,5 +1,5 @@
 import React from 'react';
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 import AssetContainer from './addon/AssetContainer';
 import {ADDON_ID, PANEL_ID} from './constants';
 
