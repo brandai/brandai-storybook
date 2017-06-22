@@ -10,7 +10,7 @@ Install:
 
 Storybook 2.x
 ```sh
-npm install --save-dev brandai-storybook@<1.0.0
+npm install --save-dev brandai-storybook@"<1.0.0"
 ```
 
 Storybook 3.x
