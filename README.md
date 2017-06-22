@@ -6,22 +6,19 @@ The Brand.ai viewer displays UI Components from a Brand.ai Design Library in [St
 
 ## Getting Started
 
-Install:
+Install (applies only if you run storybook versions 2.x):
 
 ```sh
-npm install --save-dev brandai-storybook
+npm install --save-dev brandai-storybook@"<1.0.0"
 ```
-
-Create a file called `addons.js` in your storybook config (default: `.storybook`) and add the following to `addon.js` :
+Create a file called `addons.js` in your storybook config (default: `.storybook`) and add the following to `addon.js` :  
 
 ```javascript
-// import default storybook addons
 import '@kadira/storybook/addons'
-
 import register from 'brandai-storybook';
 register({ dataUrl:'<brandai-data-export-url>' });
-
 ```
+
 ### Connecting to Brand.ai
 In order to obtain the url required to connect to brand.ai, you first need to navigate to [Brand.ai](https://brand.ai) and log in. Once you're logged in, select the design library that you want to connect to React Storybook and click the Tools and Integrations in the header.
 
@@ -50,14 +47,17 @@ Note that you will need edit permissions to the design library to connect compon
 
 ![Story url](./docs/component-url.png)
 
+You're done. Refresh your Storybook and you should see a Design Library tab in the Storybook panel. 
+![brandai-react-storybook](./docs/button-storybook.png) 
 
-The story URL contains a few pieces of information that we'll use to connect the design library to your storybook
-1. The full URL - in read-only mode, the link to your storybook will appear in the design library as a reference to the storybook
-2. We extract the story _kind_ and the story _name_ to create a connection between a Brand.ai component and a storybook story.
 
-Note: If you want the same Brand.ai component to be displayed for multiple stories of the same kind, you can paste a partial URL containing only the selectedKind
+In Brand.ai's view mode, you'll see a link from the component to the component in Storybook. This allows you to easily switch to the code view of the component directly from your design library. 
+
+Note that if you change the story kind or story name in Storybook, you'd need to enter the updated story URL in Brand.ai.  
+
+
+#### Mapping a single component to multiple stories
+If you want the same Brand.ai component to be displayed for multiple stories of the same kind, you can paste a partial URL containing only the selectedKind
 
 `http://localhost:9001/?selectedKind=Button`
 
-Refresh your Storybook and you should see a Design Library tab in the Storybook panel 
-![brandai-react-storybook](./docs/button-storybook.png) 
