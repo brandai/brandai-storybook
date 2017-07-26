@@ -65,7 +65,7 @@ export default class AssetPanel extends Component {
           <span style={infoStyle.separator}>|</span>
           <a
             style={infoStyle.libraryInfo}
-            href={this.props.brandaiUrl}
+            href={`${this.props.brandaiUrl}?q=${component.storybook.id}`}
             target="_blank"
             title={`Open the ${this.props.libraryName} design library in brand.ai`}
           >
@@ -86,7 +86,7 @@ export default class AssetPanel extends Component {
           href={this.props.brandaiUrl || 'https://brand.ai'}
           target="_blank" title="Brand.ai"
         >
-          Connect with Brand.ai
+          Brand.ai
         </a>
 
       </div>
